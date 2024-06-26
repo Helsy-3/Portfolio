@@ -1,0 +1,913 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300,400;500,600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    /* Empêche le défilement horizontal */
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow: auto;
+}
+
+section {
+    min-height: 100vh;
+    padding: 100px 0;
+    box-sizing: border-box;
+}
+
+.header nav ul {
+    display: flex;
+    /* Applique flex aux éléments de la liste */
+    justify-content: flex-end;
+    /* Alignement à droite */
+    align-items: center;
+    /* Centrage vertical */
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0)
+}
+
+.header nav ul li {
+    margin-left: 90px;
+    padding-right: 90px;
+    /* Espacement entre les éléments */
+}
+
+.header nav ul li:first-child {
+    margin-left: 0;
+    /* Aucun espacement à gauche pour le premier élément */
+}
+
+.header nav ul li a {
+    color: #fff;
+    /* Couleur du texte en blanc */
+    text-decoration: none;
+    font-size: 2rem;
+    transition: 0.5s;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.header a:hover,
+.header a.active {
+    color: var(--main-color);
+}
+
+.header .logo {
+    color: #fff;
+    /* Couleur du texte en blanc */
+    font-size: 3rem;
+    margin-right: auto;
+    /* Déplacer le logo à l'extrémité droite */
+}
+
+.home-content p {
+    font-size: 1.9rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 700px;
+
+}
+
+.home {
+    display: flex;
+    /* justify-content: center;
+    align-items: left; */
+    padding-top: 200px;
+
+}
+
+.home-content {
+    margin-top: 15rem;
+    text-align: left;
+    margin-left: 20rem;
+
+}
+
+.home-content h3 {
+    font-size: 4rem;
+
+}
+
+.home-content h1 {
+    font-size: 5rem;
+    color: #0ef;
+}
+
+.img {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    margin-left: 950px;
+    margin-top: -370px;
+}
+
+.img img {
+    width: 300px;
+    /* Taille augmentée */
+    height: 300px;
+    /* Doit être égale à la largeur */
+    object-fit: contain;
+    border: 3px solid #0ef;
+    /* Bordure légèrement plus épaisse */
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+
+
+
+
+.btn1 {
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    /* background-color: #0ef; */
+    background-color: #1f242d;
+    color: #0ef;
+    border: 2px solid #0ef;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.btn1:hover {
+    color: white;
+    border-color: white;
+}
+
+.btn2 {
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    /* background-color: #0ef; */
+    background-color: #1f242d;
+    color: #0ef;
+    border: 2px solid #0ef;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.btn2:hover {
+    color: white;
+    border-color: white;
+}
+
+.home-content .btn {
+    margin-top: 4rem;
+    margin-bottom: 20px;
+}
+
+
+
+.heading {
+    font-size: 8rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.about {
+    padding: 100px 15px;
+    background-color: var(--bg-color);
+}
+
+.about h2 {
+    margin-bottom: 5rem;
+}
+
+.timeline-items {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.timeline-items::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    /* Réduisons légèrement la largeur */
+    height: 100%;
+    background-color: var(--main-color);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    z-index: 1;
+}
+
+
+
+.timeline-item {
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+    /* Ajoute un espace vertical */
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 50px);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 50PX);
+}
+
+
+.timeline-competence {
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin: 6px 0 15px;
+}
+
+
+.timeline-content {
+    background-color: var(--second-bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 20px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    /* Ajoutez ceci */
+    z-index: 2;
+    /* Assurez-vous que le contenu est au-dessus du trait */
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    color: white;
+    margin: 0 0 10px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--main-color);
+    width: 50px;
+}
+
+.contact {
+    background-color: var(--second-bg-color);
+}
+
+.contact h2 {
+    margin-bottom: 3rem;
+    color: white;
+}
+
+.contact form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem auto;
+    text-align: center;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: 2rem;
+    border: 2px solid var(--main-color);
+    margin: 1.5rem 0;
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+}
+
+.btn3 {
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    /* background-color: #0ef; */
+    background-color: #1f242d;
+    color: #0ef;
+    border: 2px solid #0ef;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.btn3:hover {
+    color: white;
+    border-color: white;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px;
+    background-color: var(--bg-color);
+}
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.footer .social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: background-color 0.3s ease-in-out;
+    color: var(--main-color);
+}
+
+.footer .social a i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.footer .social a img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+    /* Ceci rendra l'icône blanche */
+    transition: filter 0.3s ease-in-out;
+}
+
+.footer .social a:hover {
+    background-color: var(--main-color);
+}
+
+.footer .social a:hover img {
+    filter: invert(0);
+    /* Ceci rendra l'icône noire au survol */
+}
+
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+    font-family: 1.8rem;
+}
+
+.footer ul li a:hover {
+    border-bottom: 3px solid var(--main-color);
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.footer .copyright {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--main-color);
+}
+
+span {
+    color: var(--main-color);
+}
+
+.text-animation {
+    display: inline-block;
+}
+
+@media(max-widht:1285px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+.veilles {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.veilles .content {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.veilles h2 {
+    font-size: 2.8rem;
+    color: var(--main-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.veilles h3 {
+    font-size: 20px;
+    color: var(--main-color);
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.veilles p {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.veilles p:last-child {
+    margin-bottom: 0;
+}
+
+/* Style pour les listes si vous en ajoutez plus tard */
+.veilles ul,
+.veilles ol {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.veilles li {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Ajout d'une bordure subtile pour séparer les sections */
+.veilles h3 {
+    border-top: 1px solid var(--main-color);
+    padding-top: 20px;
+}
+
+/* Style pour mettre en évidence certains mots clés */
+.veilles em {
+    font-style: normal;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .veilles h2 {
+        font-size: 2.4rem;
+    }
+
+    .veilles h3 {
+        font-size: 2rem;
+    }
+
+    .veilles p,
+    .veilles li {
+        font-size: 1.4rem;
+    }
+}
+
+.bts {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.bts h3 {
+    font-size: 3.4rem;
+    color: var(--main-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.bts h4 {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.bts p {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.bts ul,
+.bts ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.bts li {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    list-style-type: none;
+    position: relative;
+    padding-left: 20px;
+}
+
+.bts li::before {
+    content: "•";
+    color: var(--main-color);
+    font-size: 1.8rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.options-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.option {
+    width: 48%;
+    padding: 20px;
+    background-color: var(--second-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+@media (max-width: 768px) {
+    .option {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.competences h2 {
+    font-size: 3.4rem;
+    color: var(--main-color);
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 100px;
+
+}
+
+
+
+
+
+
+.timeline-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 50%;
+    position: relative;
+}
+
+.skill h3 {
+    margin-left: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.outer {
+    height: 60px;
+    width: 60px;
+    position: relative;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.inner div {
+    font-weight: 600;
+    color: white;
+    font-size: 12px;
+    z-index: 3;
+}
+
+circle {
+    fill: none;
+    stroke: #0000ff;
+    stroke-width: 5px;
+    stroke-dasharray: 160;
+    stroke-dashoffset: 160;
+    transition: stroke-dashoffset 1s ease-in-out;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 0;
+}
+
+/* Ajustements spécifiques */
+.timeline-item:nth-child(1) .timeline-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.timeline-item:nth-child(1) .skill {
+    width: 50%;
+}
+
+.timeline-item:nth-child(3) .timeline-content,
+.timeline-item:nth-child(4) .timeline-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.timeline-item:nth-child(3) .skill,
+.timeline-item:nth-child(4) .skill {
+    width: auto;
+    margin-right: 20px;
+}
+
+.timeline-item:nth-child(4) .timeline-content {
+    flex-wrap: wrap;
+}
+
+.timeline-item:nth-child(4) .skill {
+    width: auto;
+    /* Permet aux éléments de prendre leur largeur naturelle */
+    margin-right: 20px;
+    /* Ajoute un espace entre Git et GitHub */
+    margin-bottom: 15px;
+}
+
+/* Ajustements pour la section des frameworks (supposons que c'est le deuxième élément) */
+.timeline-item:nth-child(2) .timeline-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.timeline-item:nth-child(2) .skill {
+    width: calc(33.33% - 20px);
+    /* Divise l'espace en trois, en tenant compte des marges */
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+/* Pour s'assurer que le dernier élément de chaque ligne n'a pas de marge à droite */
+.timeline-item:nth-child(2) .skill:nth-child(3n) {
+    margin-right: 0;
+}
+
+/* Ajustements spécifiques pour React si nécessaire */
+.timeline-item:nth-child(2) .skill.react {
+    /* Ajoutez au moins une propriété, par exemple : */
+    width: calc(25% - 20px);
+    /* Rend React plus petit que les autres */
+}
+
+.projets {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+}
+
+.projets h2 {
+    font-size: 3.4rem;
+    color: var(--main-color);
+    margin-bottom: 40px;
+    /* Augmenté pour plus d'espace avant la grille */
+    text-align: center;
+}
+
+.projets-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    /* Augmenté de 24px à 40px */
+    justify-content: center;
+}
+
+.projet {
+    width: calc(25% - 40px);
+    /* Ajusté pour le nouveau gap */
+    padding: 20px;
+    /* Augmenté de 15px à 20px */
+    background-color: var(--second-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--main-color);
+    transition: transform 0.3s ease;
+}
+
+.projet:hover {
+    transform: translateY(-5px);
+}
+
+.projet h3 {
+    font-size: 1.5rem;
+    /* Légèrement augmenté */
+    color: var(--main-color);
+    margin-bottom: 20px;
+    /* Augmenté */
+}
+
+.projet p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    /* Augmenté */
+}
+
+.projet img {
+    width: calc(100% - 40px);
+    /* Ajusté pour le nouveau padding */
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 20px;
+    /* Augmenté */
+}
+
+
+
+@media (max-width: 768px) {
+    .projets-grid {
+        flex-direction: column;
+    }
+
+    .projet {
+        width: 100%;
+    }
+}
+
+#Experience {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#Experience h2 {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+#Experience h3 {
+    font-size: 2.2rem;
+    color: var(--main-color);
+    margin-top: 45px;
+    margin-bottom: 25px;
+    border-top: 1px solid var(--main-color);
+    padding-top: 25px;
+}
+
+#Experience h4 {
+    font-size: 2.1rem;
+    color: var(--main-color);
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+#Experience p {
+    font-size: 2.1rem;
+    line-height: 2.1;
+    margin-bottom: 20px;
+}
+
+#Experience p:last-child {
+    margin-bottom: 0;
+}
+
+#Experience ol {
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+#Experience li {
+    font-size: 2.1rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+#Experience strong {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #Experience h2 {
+        font-size: 4rem;
+    }
+
+    #Experience h3 {
+        font-size: 2.2rem;
+    }
+
+    #Experience h4 {
+        font-size: 2.1rem;
+    }
+
+    #Experience p,
+    #Experience li {
+        font-size: 2.1rem;
+    }
+}
