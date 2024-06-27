@@ -767,12 +767,11 @@ svg {
     color: var(--text-color);
 }
 
-.projets h2 {
-    font-size: 3.4rem;
-    color: var(--main-color);
-    margin-bottom: 40px;
-    /* Augmenté pour plus d'espace avant la grille */
+.projects h2 {
     text-align: center;
+    font-size: 2.5rem;
+    color: #0ef;
+    margin-bottom: 9rem;
 }
 
 .projets-grid {
@@ -807,7 +806,7 @@ svg {
 }
 
 .projet p {
-    font-size: 1rem;
+    font-size: 2rem;
     line-height: 1.6;
     margin-bottom: 20px;
     /* Augmenté */
@@ -910,4 +909,84 @@ svg {
     #Experience li {
         font-size: 2.1rem;
     }
+}
+
+.epreuve {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.def {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.def h2 {
+    font-size: 32px;
+    color: #0ef;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.def h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    height: 1px;
+    /* Réduit de 2px à 1px */
+    background-color: #0ef;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.def p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #fff;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.ep {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ep img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+    .def h2 {
+        font-size: 36px;
+    }
+
+    .def p {
+        font-size: 20px;
+    }
+
+    .ep img {
+        width: 80%;
+    }
+}
+
+.def h2::after {
+    height: 1px;
+    /* Réduit de 2px à 1px */
 }
