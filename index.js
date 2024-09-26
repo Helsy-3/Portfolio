@@ -7,13 +7,20 @@ function setProgress(id, percent) {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
+<<<<<<< HEAD
                 setProgress('number-html', 70);
                 setProgress('number-css', 85);
                 setProgress('number-js', 70);
+=======
+                setProgress('number-html', 90);
+                setProgress('number-css', 85);
+                setProgress('number-js', 80);
+>>>>>>> 9768cc26de7060bdd9e03f3cfd2f5884bf3d9d5f
                 setProgress('number-php', 75);
                 setProgress('number-react', 70);
                 setProgress('number-mysql', 80);
                 setProgress('number-postgresql', 75);
+<<<<<<< HEAD
                 setProgress('number-vscode', 85);
                 setProgress('number-git', 80);
                 setProgress('number-github', 80);
@@ -47,3 +54,9 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
                                                 console.error('Error:', error);
                                 });
 });
+=======
+                setProgress('number-vscode', 95);
+                setProgress('number-git', 85);
+                setProgress('number-github', 80);
+});
+>>>>>>> 9768cc26de7060bdd9e03f3cfd2f5884bf3d9d5f
