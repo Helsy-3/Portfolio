@@ -7,29 +7,32 @@ function setProgress(id, percent) {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-<<<<<<< HEAD
                 setProgress('number-html', 70);
                 setProgress('number-css', 85);
                 setProgress('number-js', 70);
-=======
-                setProgress('number-html', 90);
-                setProgress('number-css', 85);
-                setProgress('number-js', 80);
->>>>>>> 9768cc26de7060bdd9e03f3cfd2f5884bf3d9d5f
                 setProgress('number-php', 75);
                 setProgress('number-react', 70);
                 setProgress('number-mysql', 80);
                 setProgress('number-postgresql', 75);
-<<<<<<< HEAD
                 setProgress('number-vscode', 85);
                 setProgress('number-git', 80);
                 setProgress('number-github', 80);
 });
 
 
+//juste pour tester
 
 document.getElementById('contact-form').addEventListener('submit', function (event) {
                 event.preventDefault();
+
+                // Validation des champs requis
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+
+                if (!name || !email) {
+                                document.getElementById('response').innerText = 'Veuillez remplir tous les champs requis.';
+                                return;
+                }
 
                 var formData = new FormData(this);
                 var data = {};
@@ -37,7 +40,11 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
                                 data[key] = value;
                 });
 
-                fetch('VOTRE_URL_DE_DEPLOIEMENT_ICI', {
+                // Affichage du message de chargement
+                document.getElementById('response').innerText = 'Envoi du message...';
+
+                //récuperer
+                fetch('https://script.google.com/macros/s/AKfycbz1VIRYOTafrqdV4gOcmJhWaVQk98gylGcLfqJUF7NGx66w-_TRX7S0AW1cCWCfRSRjew/exec', {
                                 method: 'POST',
                                 headers: {
                                                 'Content-Type': 'application/json',
@@ -54,9 +61,3 @@ document.getElementById('contact-form').addEventListener('submit', function (eve
                                                 console.error('Error:', error);
                                 });
 });
-=======
-                setProgress('number-vscode', 95);
-                setProgress('number-git', 85);
-                setProgress('number-github', 80);
-});
->>>>>>> 9768cc26de7060bdd9e03f3cfd2f5884bf3d9d5f
