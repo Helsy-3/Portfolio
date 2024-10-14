@@ -972,21 +972,154 @@ svg {
     margin-bottom: 50px;
 }
 
-@media (min-width: 768px) {
-    .def h2 {
-        font-size: 36px;
-    }
+/* Styles par défaut (pour desktop et grands écrans) */
+body {
+    font-size: 18px;
+}
 
-    .def p {
-        font-size: 20px;
-    }
+.logo {
+    font-size: 32px;
+}
 
-    .ep img {
-        width: 80%;
+/* Styles pour les grands écrans (largeur supérieure à 1200px) */
+@media screen and (min-width: 1200px) {
+
+    /* Ce que tu veux spécifiquement pour les grands écrans */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }
 
-.def h2::after {
-    height: 1px;
-    /* Réduit de 2px à 1px */
+/* Styles pour les ordinateurs portables (largeur entre 992px et 1200px) */
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+    .logo {
+        font-size: 28px;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .projets-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Styles pour les tablettes (largeur entre 768px et 991px) */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .logo {
+        font-size: 26px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-content h1 {
+        font-size: 28px;
+    }
+
+    .projets-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .home-content img {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/* Styles pour les smartphones (largeur entre 576px et 767px) */
+@media screen and (max-width: 767px) and (min-width: 576px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-content h1 {
+        font-size: 24px;
+    }
+
+    .home-content img {
+        width: 100%;
+    }
+
+    .projets-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Styles pour les petits téléphones (largeur inférieure à 576px) */
+@media screen and (max-width: 575px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .home-content h1,
+    .home-content h3 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .home-content p {
+        font-size: 14px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .home-content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .projets-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projet img {
+        width: 100%;
+        height: auto;
+    }
+
+    #contact-form {
+        flex-direction: column;
+    }
+
+    .input-box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .timeline-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline-item {
+        width: 90%;
+    }
 }
