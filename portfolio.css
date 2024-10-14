@@ -125,25 +125,20 @@ section {
     color: #0ef;
 }
 
-.img {
+/* .img {
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
     margin-left: 950px;
     margin-top: -370px;
 }
 
 .img img {
     width: 300px;
-    /* Taille augmentée */
     height: 300px;
-    /* Doit être égale à la largeur */
     object-fit: contain;
     border: 3px solid #0ef;
-    /* Bordure légèrement plus épaisse */
     border-radius: 50%;
     background-color: transparent;
-}
+} */
 
 
 
