@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const projectImages = document.querySelectorAll('.projet img, .veille img');
 
                 const pdfPaths = {
-                                'Hathor.png': 'assets/AP1.pdf',
+                                'fic.png': 'assets/AP1.pdf',
                                 'M2L.png': 'assets/AP2.pdf',
                                 'GLPI.png': 'assets/GLPI.pdf',
                                 'veille-1.png': 'assets/RAYNEO X2.pdf'
