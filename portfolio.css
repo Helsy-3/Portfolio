@@ -104,7 +104,7 @@ section {
     display: flex;
     /* justify-content: center;
     align-items: left; */
-    padding-top: 200px;
+    padding-top: 85px;
 
 }
 
@@ -124,25 +124,6 @@ section {
     font-size: 5rem;
     color: #0ef;
 }
-
-/* .img {
-    display: flex;
-    margin-left: 950px;
-    margin-top: -370px;
-}
-
-.img img {
-    width: 300px;
-    height: 300px;
-    object-fit: contain;
-    border: 3px solid #0ef;
-    border-radius: 50%;
-    background-color: transparent;
-} */
-
-
-
-
 
 .btn1 {
     padding: 10px 20px;
@@ -268,7 +249,6 @@ section {
     padding: 30px 50px;
     border-radius: 4rem;
     box-shadow: 0 0 20px var(--main-color);
-    cursor: pointer;
     transition: 0.3s ease-in-out;
     display: flex;
     flex-direction: row;
@@ -276,9 +256,7 @@ section {
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    /* Ajoutez ceci */
     z-index: 2;
-    /* Assurez-vous que le contenu est au-dessus du trait */
 }
 
 .timeline-content:hover {
@@ -519,6 +497,26 @@ span {
     font-weight: bold;
 }
 
+.veille img {
+    width: 300px;
+    /* Largeur de l'image */
+    height: 200px;
+    /* Hauteur de l'image */
+    object-fit: cover;
+    /* Ajuste l'image pour qu'elle remplisse le cadre sans distorsion */
+    border-radius: 10px;
+    /* Coins arrondis */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transition pour le survol */
+}
+
+.veille img:hover {
+    transform: scale(1.05);
+    /* Zoom léger au survol */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Ombre au survol */
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .veilles h2 {
@@ -541,7 +539,7 @@ span {
     padding: 40px 20px;
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
-    cursor: pointer;
+
 }
 
 .bts h3 {
@@ -766,7 +764,7 @@ svg {
     text-align: center;
     font-size: 2.5rem;
     color: #0ef;
-    margin-bottom: 9rem;
+    margin-bottom: 20rem;
 }
 
 .projets-grid {
@@ -807,15 +805,205 @@ svg {
     /* Augmenté */
 }
 
-.projet img {
-    width: calc(100% - 40px);
-    /* Ajusté pour le nouveau padding */
+#projects .projets-grid .projet img {
+    width: 100%;
+    max-width: 350px;
+    /* Largeur maximale */
     height: auto;
-    object-fit: contain;
-    border-radius: 10px;
-    margin: 20px;
-    /* Augmenté */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
+
+@media (max-width: 768px) {
+    #projects .projets-grid .projet img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #projects .projets-grid .projet img {
+        max-width: 100%;
+        height: auto;
+        margin: 10px;
+        /* Réduit les marges sur les petits écrans */
+    }
+}
+
+.main-content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Aligner le contenu au bas de la page */
+    margin-bottom: 20rem;
+}
+
+.liste-documents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 20rem;
+    margin-top: 30rem;
+    justify-content: center;
+}
+
+.liste-documents li {
+    width: calc(33.33% - 20px);
+    list-style-type: none;
+}
+
+.liste-documents a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #0ef;
+}
+
+.liste-documents a:hover {
+    color: #fff;
+}
+
+
+.epreuve {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 130px;
+    margin-bottom: -40rem;
+}
+
+.def {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.def h2 {
+    font-size: 32px;
+    color: #0ef;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.def h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 950px;
+    height: 1px;
+    /* Réduit de 2px à 1px */
+    background-color: #0ef;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.def p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #fff;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.ep {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn3 .btn-image {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.def {
+    position: relative;
+    /* Permet un positionnement absolu de l'enfant (.arrow) */
+}
+
+.arrow {
+    cursor: pointer;
+    height: 20px;
+    /* Taille réduite à 1/3 de l'original */
+    width: 16.67px;
+    /* Taille réduite à 1/3 de l'original */
+    position: absolute;
+    right: 40rem;
+    /* Alignement à droite */
+    bottom: 0;
+    /* Alignement avec la dernière ligne du texte */
+    transition: transform 0.1s;
+}
+
+.arrow-top,
+.arrow-bottom {
+    background-color: #0ef;
+    height: 1.33px;
+    /* Taille réduite proportionnellement */
+    width: 100%;
+    position: absolute;
+    top: 50%;
+}
+
+.arrow-top:after,
+.arrow-bottom:after {
+    background-color: #fff;
+    height: 100%;
+    content: "";
+    position: absolute;
+    transition: all 0.15s;
+}
+
+.arrow-top {
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+}
+
+.arrow-top:after {
+    left: 100%;
+    right: 0;
+    transition-delay: 0s;
+}
+
+.arrow-bottom {
+    transform: rotate(-45deg);
+    transform-origin: top right;
+}
+
+.arrow-bottom:after {
+    left: 0;
+    right: 100%;
+    transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-top:after {
+    left: 0;
+    transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-bottom:after {
+    right: 0;
+    transition-delay: 0s;
+}
+
+.arrow:active {
+    transform: scale(0.9);
+}
+
+
+
+
 
 
 
@@ -829,62 +1017,7 @@ svg {
     }
 }
 
-#Experience {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
 
-#Experience h2 {
-    font-size: 3rem;
-    color: var(--main-color);
-    margin-bottom: 35px;
-    text-align: center;
-}
-
-#Experience h3 {
-    font-size: 2.2rem;
-    color: var(--main-color);
-    margin-top: 45px;
-    margin-bottom: 25px;
-    border-top: 1px solid var(--main-color);
-    padding-top: 25px;
-}
-
-#Experience h4 {
-    font-size: 2.1rem;
-    color: var(--main-color);
-    margin-top: 35px;
-    margin-bottom: 20px;
-}
-
-#Experience p {
-    font-size: 2.1rem;
-    line-height: 2.1;
-    margin-bottom: 20px;
-}
-
-#Experience p:last-child {
-    margin-bottom: 0;
-}
-
-#Experience ol {
-    padding-left: 25px;
-    margin-bottom: 20px;
-}
-
-#Experience li {
-    font-size: 2.1rem;
-    line-height: 1.7;
-    margin-bottom: 12px;
-}
-
-#Experience strong {
-    color: var(--main-color);
-    font-weight: bold;
-}
 
 /* Responsive design */
 @media (max-width: 768px) {
@@ -906,66 +1039,6 @@ svg {
     }
 }
 
-.epreuve {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.def {
-    width: 100%;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.def h2 {
-    font-size: 32px;
-    color: #0ef;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 40px;
-}
-
-.def h2::after {
-    content: '';
-    display: block;
-    width: 100%;
-    max-width: 1200px;
-    height: 1px;
-    /* Réduit de 2px à 1px */
-    background-color: #0ef;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.def p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #fff;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-}
-
-.ep {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.ep img {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    display: block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px;
-}
 
 /* Styles par défaut (pour desktop et grands écrans) */
 body {

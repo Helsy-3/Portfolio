@@ -1,70 +1,133 @@
-function setProgress(id, percent) {
-                let circle = document.querySelector(`#${id}`).parentNode.parentNode.querySelector('circle');
-                if (!circle) {
-                                console.error(`Aucun élément trouvé pour l'ID: ${id}`);
-                                return;
-                }
-                let radius = circle.r.baseVal.value;
-                let circumference = radius * 2 * Math.PI;
-                circle.style.strokeDasharray = `${circumference} ${circumference}`;
-                circle.style.strokeDashoffset = circumference - (percent / 100) * circumference;
-}
+document.addEventListener('DOMContentLoaded', () => {
+                // Fonction pour définir la progression du cercle
+                const setProgress = (element, percent) => {
+                                const circle = element.querySelector('circle');
+                                const radius = circle.r.baseVal.value;
+                                const circumference = radius * 2 * Math.PI;
 
-document.addEventListener('DOMContentLoaded', (event) => {
-                setProgress('number-html', 70);
-                setProgress('number-css', 85);
-                setProgress('number-js', 70);
-                setProgress('number-php', 75);
-                setProgress('number-react', 70);
-                setProgress('number-mysql', 80);
-                setProgress('number-postgresql', 75);
-                setProgress('number-vscode', 85);
-                setProgress('number-git', 80);
-                setProgress('number-github', 80);
+                                circle.style.strokeDasharray = `${circumference} ${circumference}`;
+                                circle.style.strokeDashoffset = circumference - (percent / 100) * circumference;
+                };
 
-                const form = document.getElementById('contact-form');
-                if (form) {
-                                form.addEventListener('submit', function (event) {
-                                                event.preventDefault();
+                // Sélectionner tous les skills
+                const skills = document.querySelectorAll('.skill');
 
-                                                const nameField = document.querySelector('input[name="name"]');
-                                                const emailField = document.querySelector('input[name="email"]');
-                                                console.log(nameField, emailField); // Vérifie l'existence des éléments
+                // Données de compétences
+                const skillData = {
+                                'number-html': 70,
+                                'number-css': 85,
+                                'number-js': 75,
+                                'number-php': 75,
+                                'number-nodejs': 75,
+                                'number-mysql': 80,
+                                'number-vscode': 85,
+                                'number-github': 80
+                };
 
-                                                const name = nameField.value;
-                                                const email = emailField.value;
-
-                                                if (!name || !email) {
-                                                                document.getElementById('response').innerText = 'Veuillez remplir tous les champs requis.';
-                                                                return;
+                // Parcourir les compétences et appliquer les progressions
+                skills.forEach(skill => {
+                                const percentElement = skill.querySelector('.inner div');
+                                if (percentElement) {
+                                                const percent = skillData[percentElement.id];
+                                                if (percent !== undefined) {
+                                                                setProgress(skill, percent);
                                                 }
+                                }
+                });
+});
+document.addEventListener('DOMContentLoaded', () => {
+                const projectImages = document.querySelectorAll('.projet img, .veille img');
 
-                                                var formData = new FormData(this);
-                                                var data = {};
-                                                formData.forEach((value, key) => {
-                                                                data[key] = value;
-                                                });
+                const pdfPaths = {
+                                'Hathor.png': '/assets/AP1.pdf',
+                                'M2L.png': '/assets/AP2.pdf',
+                                'GLPI.png': '/assets/GLPI.pdf',
+                                'veille-1.png': '/assets/RAYNEO X2.pdf',
+                };
 
-                                                document.getElementById('response').innerText = 'Envoi du message...';
+                projectImages.forEach(image => {
+                                image.style.cursor = 'pointer';
 
-                                                fetch('https://script.google.com/macros/s/AKfycbz1VIRYOTafrqdV4gOcmJhWaVQk98gylGcLfqJUF7NGx66w-_TRX7S0AW1cCWCfRSRjew/exec', {
-                                                                method: 'POST',
-                                                                headers: {
-                                                                                'Content-Type': 'application/json',
-                                                                },
-                                                                body: JSON.stringify(data),
-                                                })
-                                                                .then(response => response.json())
-                                                                .then(data => {
-                                                                                document.getElementById('response').innerText = 'Message envoyé avec succès!';
-                                                                                form.reset();
-                                                                })
-                                                                .catch((error) => {
-                                                                                document.getElementById('response').innerText = 'Erreur lors de l\'envoi du message.';
-                                                                                console.error('Error:', error);
-                                                                });
+                                image.addEventListener('click', () => {
+                                                const filename = image.getAttribute('src').split('/').pop();
+                                                const pdfPath = pdfPaths[filename];
+
+                                                if (pdfPath) {
+                                                                window.open(pdfPath, '_blank');
+                                                } else {
+                                                                console.warn(`No PDF found for image: ${filename}`);
+                                                }
+                                });
+                });
+});
+document.addEventListener("DOMContentLoaded", function () {
+                const downloadButton = document.getElementById("download-button");
+                console.log(downloadButton); // Vérifiez que l'élément est bien trouvé
+                if (downloadButton) {
+                                downloadButton.addEventListener("click", function () {
+                                                window.open("/assets/Tableau de synthèse.pdf", "_blank");
                                 });
                 } else {
-                                console.error('Le formulaire n\'a pas été trouvé.');
+                                console.log("Élément non trouvé.");
                 }
+});
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+                const form = document.getElementById('contact-form');
+                const responseElement = document.getElementById('response');
+
+                form.addEventListener('submit', function (event) {
+                                event.preventDefault();
+
+                                const formData = new FormData(this);
+                                const requiredFields = ['name', 'email', 'phone', 'subject', 'message'];
+                                const emptyFields = requiredFields.filter(field => !formData.get(field).trim());
+
+                                if (emptyFields.length > 0) {
+                                                responseElement.textContent = 'Veuillez remplir tous les champs.';
+                                                responseElement.style.color = 'red';
+                                                return;
+                                }
+
+                                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                if (!emailRegex.test(formData.get('email'))) {
+                                                responseElement.textContent = 'Veuillez entrer une adresse email valide.';
+                                                responseElement.style.color = 'red';
+                                                return;
+                                }
+
+                                const submitButton = form.querySelector('input[type="submit"]');
+                                submitButton.disabled = true;
+                                submitButton.value = 'Envoi en cours...';
+
+                                responseElement.textContent = 'Envoi du message...';
+                                responseElement.style.color = 'blue';
+
+                                const scriptURL = 'https://script.google.com/macros/s/AKfycbz1VIRYOTafrqdV4gOcmJhWaVQk98gylGcLfqJUF7NGx66w-_TRX7S0AW1cCWCfRSRjew/exec';
+
+                                fetch(scriptURL, {
+                                                method: 'POST',
+                                                body: formData
+                                })
+                                                .then(response => response.json())
+                                                .then(result => {
+                                                                responseElement.textContent = 'Message envoyé avec succès !';
+                                                                responseElement.style.color = 'green';
+                                                                form.reset();
+                                                })
+                                                .catch(error => {
+                                                                console.error('Erreur:', error);
+                                                                responseElement.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+                                                                responseElement.style.color = 'red';
+                                                })
+                                                .finally(() => {
+                                                                submitButton.disabled = false;
+                                                                submitButton.value = 'Send Message';
+                                                });
+                });
 });
