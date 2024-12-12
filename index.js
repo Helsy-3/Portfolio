@@ -42,10 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Définir les chemins des fichiers PDF associés à chaque image
                 const pdfPaths = {
-                                'Hathor.png': '/assets/AP1.pdf',  // PDF associé à Hathor.png
-                                'M2L.png': '/assets/AP2.pdf',     // PDF associé à M2L.png
-                                'GLPI.png': '/assets/GLPI.pdf',   // PDF associé à GLPI.png
-                                'veille-1.png': '/assets/RAYNEO X2.pdf', // PDF associé à veille-1.png
+                                'Hathor.png': './assets/AP1.pdf',
+                                'M2L.png': './assets/AP2.pdf',
+                                'GLPI.png': './assets/GLPI.pdf'
                 };
 
                 // Parcourir toutes les images des projets et ajouter un événement de clic
