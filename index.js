@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 });
 document.addEventListener('DOMContentLoaded', () => {
+                // Pour les images des projets
                 const projectImages = document.querySelectorAll('.projet img, .veille img');
 
                 const pdfPaths = {
@@ -59,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 }
                                 });
                 });
-});
-document.addEventListener("DOMContentLoaded", function () {
+
+                // Pour le bouton de téléchargement
                 const downloadButton = document.getElementById("download-button");
                 console.log(downloadButton); // Vérifiez que l'élément est bien trouvé
                 if (downloadButton) {
@@ -71,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 console.log("Élément non trouvé.");
                 }
 });
+
 
 
 
