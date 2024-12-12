@@ -35,52 +35,41 @@ document.addEventListener('DOMContentLoaded', () => {
                                 }
                 });
 });
-// Attendre que le DOM soit complètement chargé avant d'ajouter les événements
 document.addEventListener('DOMContentLoaded', () => {
-                // Sélectionner toutes les images des projets et des veilles
                 const projectImages = document.querySelectorAll('.projet img, .veille img');
 
-                // Définir les chemins des fichiers PDF associés à chaque image
                 const pdfPaths = {
-                                'Hathor.png': './assets/AP1.pdf',
-                                'M2L.png': './assets/AP2.pdf',
-                                'GLPI.png': './assets/GLPI.pdf'
+                                'Hathor.png': 'assets/AP1.pdf',
+                                'M2L.png': 'assets/AP2.pdf',
+                                'GLPI.png': 'assets/GLPI.pdf',
+                                'veille-1.png': 'assets/RAYNEO X2.pdf'
                 };
 
-                // Parcourir toutes les images des projets et ajouter un événement de clic
                 projectImages.forEach(image => {
-                                // Modifier le curseur pour indiquer que l'image est cliquable
                                 image.style.cursor = 'pointer';
 
-                                // Ajouter un événement au clic sur chaque image
                                 image.addEventListener('click', () => {
-                                                // Récupérer le nom de fichier de l'image cliquée
                                                 const filename = image.getAttribute('src').split('/').pop();
+                                                console.log('Clicked image:', filename);  // Debugging
 
-                                                // Chercher le chemin du PDF correspondant
                                                 const pdfPath = pdfPaths[filename];
+                                                console.log('PDF Path:', pdfPath);  // Debugging
 
-                                                // Si un PDF est trouvé pour cette image, ouvrir le PDF dans un nouvel onglet
                                                 if (pdfPath) {
                                                                 window.open(pdfPath, '_blank');
                                                 } else {
-                                                                // Afficher un message d'avertissement si aucun PDF n'est trouvé pour cette image
                                                                 console.warn(`No PDF found for image: ${filename}`);
+                                                                alert(`Aucun PDF trouvé pour cette image : ${filename}`);
                                                 }
                                 });
                 });
 
-                // Pour le bouton de téléchargement (si présent dans le HTML)
                 const downloadButton = document.getElementById("download-button");
-                console.log(downloadButton);  // Vérifier si l'élément est trouvé
                 if (downloadButton) {
-                                // Ajouter un événement de clic sur le bouton de téléchargement
                                 downloadButton.addEventListener("click", function () {
-                                                // Ouvrir le fichier PDF associé dans un nouvel onglet
-                                                window.open("/assets/Tableau de synthèse.pdf", "_blank");
+                                                window.open("assets/Tableau de synthèse.pdf", "_blank");
                                 });
                 } else {
-                                // Si l'élément n'est pas trouvé, afficher un message d'erreur
                                 console.log("Élément non trouvé.");
                 }
 });
