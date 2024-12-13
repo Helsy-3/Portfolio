@@ -764,14 +764,13 @@ svg {
     text-align: center;
     font-size: 2.5rem;
     color: #0ef;
-    margin-bottom: 20rem;
+    margin-bottom: 10rem;
 }
 
 .projets-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 60px;
-    /* Augmenté de 24px à 40px */
     justify-content: center;
 }
 
@@ -779,7 +778,6 @@ svg {
     width: calc(25% - 40px);
     /* Ajusté pour le nouveau gap */
     padding: 20px;
-    /* Augmenté de 15px à 20px */
     background-color: var(--second-bg-color);
     border-radius: 10px;
     box-shadow: 0 0 5px var(--main-color);
@@ -792,25 +790,22 @@ svg {
 
 .projet h3 {
     font-size: 1.5rem;
-    /* Légèrement augmenté */
     color: var(--main-color);
     margin-bottom: 20px;
-    /* Augmenté */
 }
 
 .projet p {
     font-size: 2rem;
     line-height: 1.6;
     margin-bottom: 20px;
-    /* Augmenté */
 }
 
 #projects .projets-grid .projet img {
     width: 100%;
-    max-width: 350px;
-    /* Largeur maximale */
-    height: auto;
+    height: 200px;
+    /* Hauteur fixe pour toutes les images */
     object-fit: cover;
+    /* Assure que les images gardent leur rapport de forme */
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
@@ -831,38 +826,61 @@ svg {
     }
 }
 
-.main-content {
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    /* Aligner le contenu au bas de la page */
-    margin-bottom: 20rem;
+#documents {
+    background-color: var(--second-bg-color);
+    /* Définit le fond en rouge */
 }
+
 
 .liste-documents {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-left: 20rem;
-    margin-top: 30rem;
     justify-content: center;
+    gap: 3rem;
+    margin: 5rem auto;
 }
 
 .liste-documents li {
-    width: calc(33.33% - 20px);
     list-style-type: none;
+    width: calc(33.33% - 3rem);
+    display: flex;
+    justify-content: center;
 }
 
-.liste-documents a {
-    display: block;
-    padding: 5px 10px;
-    text-decoration: none;
+.liste-documents input[type="button"] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 3rem;
+    border: 2px solid var(--main-color);
+    border-radius: 2rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.liste-documents input[type="button"]:hover {
+
     color: #0ef;
 }
 
-.liste-documents a:hover {
-    color: #fff;
+@media (min-width: 768px) {
+    .liste-documents li {
+        width: calc(33.33% - 2rem);
+        /* 3 colonnes sur écran large */
+    }
+}
+
+@media (max-width: 480px) {
+    .liste-documents li {
+        width: 100%;
+        /* 1 colonne sur petits écrans */
+    }
 }
 
 

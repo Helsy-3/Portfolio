@@ -37,31 +37,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 document.addEventListener('DOMContentLoaded', () => {
                 const projectImages = document.querySelectorAll('.projet img, .veille img');
-
                 const pdfPaths = {
                                 'hathor.png': 'assets/AP1.pdf',
                                 'M2L.png': 'assets/AP2.pdf',
                                 'GLPI.png': 'assets/GLPI.pdf',
+                                'Rapport de stage.png': 'assets/Rapport de stage.pdf',
                                 'veille-1.png': 'assets/RAYNEO X2.pdf'
                 };
 
-                projectImages.forEach(image => {
-                                image.style.cursor = 'pointer';
+                projectImages.forEach((image, index) => {
+                                // Exclure les projets 3 (index 3) et 5 (index 4)
+                                if (index !== 3 && index !== 4) {
+                                                image.style.cursor = 'pointer';
 
-                                image.addEventListener('click', () => {
-                                                const filename = image.getAttribute('src').split('/').pop();
-                                                console.log('Clicked image:', filename);  // Debugging
+                                                image.addEventListener('click', () => {
+                                                                const filename = image.getAttribute('src').split('/').pop();
+                                                                console.log('Clicked image:', filename);  // Debugging
 
-                                                const pdfPath = pdfPaths[filename];
-                                                console.log('PDF Path:', pdfPath);  // Debugging
+                                                                const pdfPath = pdfPaths[filename];
+                                                                console.log('PDF Path:', pdfPath);  // Debugging
 
-                                                if (pdfPath) {
-                                                                window.open(pdfPath, '_blank');
-                                                } else {
-                                                                console.warn(`No PDF found for image: ${filename}`);
-                                                                alert(`Aucun PDF trouvé pour cette image : ${filename}`);
-                                                }
-                                });
+                                                                if (pdfPath) {
+                                                                                window.open(pdfPath, '_blank');
+                                                                } else {
+                                                                                console.warn(`No PDF found for image: ${filename}`);
+                                                                                alert(`Aucun PDF trouvé pour cette image : ${filename}`);
+                                                                }
+                                                });
+                                }
                 });
 
                 const downloadButton = document.getElementById("download-button");
@@ -73,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 console.log("Élément non trouvé.");
                 }
 });
+
 
 
 
