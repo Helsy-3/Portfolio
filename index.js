@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 'hathor.png': 'assets/AP1.pdf',
                                 'M2L.png': 'assets/AP2.pdf',
                                 'GLPI.png': 'assets/GLPI.pdf',
-                                'Rapport de stage.png': 'assets/Rapport de stage.pdf',
+                                'stage.png': 'assets/Rapport de stage.pdf',
                                 'veille-1.png': 'assets/RAYNEO X2.pdf'
                 };
 

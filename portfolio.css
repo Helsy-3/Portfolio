@@ -839,6 +839,7 @@ svg {
     justify-content: center;
     gap: 3rem;
     margin: 5rem auto;
+    margin-top: 20rem;
 }
 
 .liste-documents li {
