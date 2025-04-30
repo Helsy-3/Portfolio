@@ -39,9 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 'M2L.png': 'https://github.com/EnzoSCH1/AP3',
                                 'GLPI.png': 'assets/GLPI.pdf',
                                 'stage.png': 'assets/Rapport de stage.pdf',
-                                'veille-1.png': 'assets/RAYNEO X2 (1).pdf',
+                                'veille-1.png': 'assets/RAYNEO X2.pdf',
                                 'to-do list.png': 'https://github.com/Helsy-3/To-Do-list',
-                                'image.png': 'https://github.com/Helsy-3/Weather'
+                                'image.png': 'https://github.com/Helsy-3/Weather',
+                                'deepseeck.png': 'assets/Deepseck.pdf'
                 };
 
                 projectImages.forEach((image, index) => {

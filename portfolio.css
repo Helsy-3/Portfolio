@@ -435,6 +435,17 @@ span {
     }
 }
 
+.veilles-flex {
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */
+    flex-wrap: wrap;
+    gap: 300px;
+}
+
+
+
+
 .veilles {
     padding: 80px 0;
     background-color: var(--bg-color);
@@ -442,6 +453,7 @@ span {
 }
 
 .veilles .content {
+
     max-width: 950px;
     margin: 0 auto;
     padding: 0 20px;
@@ -826,7 +838,6 @@ svg {
     }
 }
 
-
 #documents {
     background-color: var(--second-bg-color);
     /* Définit le fond en rouge */
@@ -869,6 +880,9 @@ svg {
 
     color: #0ef;
 }
+
+
+
 
 @media (min-width: 768px) {
     .liste-documents li {
