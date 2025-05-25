@@ -635,134 +635,28 @@ span {
 
 
 
-
-.timeline-content {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .skill {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 15px;
-    width: 50%;
-    position: relative;
+    width: 120px;
+    margin: 10px;
 }
+
+.skill-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
 
 .skill h3 {
-    margin-left: 10px;
-    position: relative;
-    z-index: 2;
+    font-size: 1.6rem;
+    color: #fff;
+    text-align: center;
 }
 
-.outer {
-    height: 60px;
-    width: 60px;
-    position: relative;
-    border-radius: 50%;
-    background-color: transparent;
-    z-index: 1;
-}
-
-.inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-}
-
-.inner div {
-    font-weight: 600;
-    color: white;
-    font-size: 12px;
-    z-index: 3;
-}
-
-circle {
-    fill: none;
-    stroke: #0000ff;
-    stroke-width: 5px;
-    stroke-dasharray: 160;
-    stroke-dashoffset: 160;
-    transition: stroke-dashoffset 1s ease-in-out;
-}
-
-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 60px;
-    z-index: 0;
-}
-
-/* Ajustements spécifiques */
-.timeline-item:nth-child(1) .timeline-content {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.timeline-item:nth-child(1) .skill {
-    width: 50%;
-}
-
-.timeline-item:nth-child(3) .timeline-content,
-.timeline-item:nth-child(4) .timeline-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-.timeline-item:nth-child(3) .skill,
-.timeline-item:nth-child(4) .skill {
-    width: auto;
-    margin-right: 20px;
-}
-
-.timeline-item:nth-child(4) .timeline-content {
-    flex-wrap: wrap;
-}
-
-.timeline-item:nth-child(4) .skill {
-    width: auto;
-    /* Permet aux éléments de prendre leur largeur naturelle */
-    margin-right: 20px;
-    /* Ajoute un espace entre Git et GitHub */
-    margin-bottom: 15px;
-}
-
-/* Ajustements pour la section des frameworks (supposons que c'est le deuxième élément) */
-.timeline-item:nth-child(2) .timeline-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-.timeline-item:nth-child(2) .skill {
-    width: calc(33.33% - 20px);
-    /* Divise l'espace en trois, en tenant compte des marges */
-    margin-right: 20px;
-    margin-bottom: 15px;
-}
-
-/* Pour s'assurer que le dernier élément de chaque ligne n'a pas de marge à droite */
-.timeline-item:nth-child(2) .skill:nth-child(3n) {
-    margin-right: 0;
-}
-
-/* Ajustements spécifiques pour React si nécessaire */
-.timeline-item:nth-child(2) .skill.react {
-    /* Ajoutez au moins une propriété, par exemple : */
-    width: calc(25% - 20px);
-    /* Rend React plus petit que les autres */
-}
 
 .projets {
     max-width: 1200px;
