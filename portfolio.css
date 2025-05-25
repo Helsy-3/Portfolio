@@ -644,8 +644,8 @@ span {
 }
 
 .skill-logo {
-    width: 30px;
-    height: 30px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     margin-bottom: 0.5rem;
 }
